@@ -1,0 +1,84 @@
+body {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    /*font-family: "TP Vorzeit Grotesk Demi",Monaco, arial;*/
+    font-family: arial;
+}
+
+header {
+    margin: 20px;
+    border: 5px solid black;
+    padding: 40px white;
+    text-align: left;
+}
+
+h1 {
+    margin: 20px;
+    padding: 40px white;
+
+}
+
+.book_review {
+    text-align: left;
+    margin: 40px;
+    padding 60px white;
+    font-size: 20px;
+
+}
+
+.list {
+    margin: 20px;
+    border: 5px solid black;
+    text-align: left;
+}
+
+.row {
+    text-align: left;
+    margin: 10px;
+    display: flex;
+    font-size: 20px;
+}
+
+.col {
+    text-align: left;
+    margin: 10px;
+    display: inline-block;  
+}
+
+
+.full {
+  color: rgb(0,0,0);
+  text-decoration: underline;
+}
+
+.full:hover{
+  background-color: rgb(0,0,0);
+  color: rgb(255,255,255);
+}
+
+.wrap {
+    display:flex;
+}
+
+.box_scroll {
+    height: 100vh;
+    width: 50vw;
+    background-color: white;
+    overflow: scroll;
+}
+
+
+.box_no_scroll {
+    height: 100vh;
+    width: 50vw;
+    background-color: white;
+}
+
+.book-fit {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+}
