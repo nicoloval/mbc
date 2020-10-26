@@ -25,18 +25,23 @@
     </div>
     </header>
     <div class="list">
-        <div class="flex justify-between">
-            <div class="fl w-third pa2">Date</div>
-            <div class="fl w-third pa2">Object</div>
-            <div class="fl w-third pa2">Subject</div>
-        </div>
-        <div class="flex justify-between">
-            <a class="full", href="entries/book_entries/wgo.html">
-            <div class="fl w-third pa2">2020 10 25</div>
-            <div class="fl w-third pa2">Book review</div>
-            <div class="fl w-third pa2">Woman, girl, other</div>
-            </a>
-        </div>
+    <table style="width: 100%;" id="IndexTable">
+        <tr>
+            <th class="fl w-third pa2" onclick="sortTable(0)">Date</div>
+            <th class="fl w-third pa2" onclick="sortTable(1)">Object</div>
+            <th class="fl w-third pa2" onclick="sortTable(2)">Subject</div>
+        </tr>
+        <tr class="full"  style='cursor: pointer; cursor: hand;' onclick="window.location='entries/book_reviews/wgo.html';">
+            <td class="fl w-third pa2">2020 10 25</div>
+            <td class="fl w-third pa2">Book review</div>
+            <td class="fl w-third pa2">Woman, girl, other</div>
+        </tr>
+        <tr class="full"  style='cursor: pointer; cursor: hand;' onclick="window.location='entries/essays/ij.html';">
+            <td class="fl w-third pa2">2020 10 26</div>
+            <td class="fl w-third pa2">Essay</div>
+            <td class="fl w-third pa2">About Infinite Jest: a post-moder WASP Odissey</div>
+        </tr>
+    </table>
     </div>
     <footer class="white_list">
     <div class="wrap">
@@ -53,4 +58,64 @@
     </p>
     </footer>
 </body>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("IndexTable");
+  switching = true;
+  // Set the sorting direction to ascending:
+  dir = "asc";
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /* Check if the two rows should switch place,
+      based on the direction, asc or desc: */
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      // Each time a switch is done, increase this count by 1:
+      switchcount ++;
+    } else {
+      /* If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again. */
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+
 </html>
+
+
