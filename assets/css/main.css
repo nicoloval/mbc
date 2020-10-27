@@ -23,7 +23,7 @@ h1 {
 }
 
 .book_review {
-    text-align: left;
+    text-align: justify;
     margin: 40px;
     padding 60px white;
     font-size: 20px;
@@ -74,6 +74,11 @@ h1 {
     flex-direction: row;
 }
 
+.wrap_reverse {
+    display:flex;
+    flex-direction: row;
+}
+
 .box_scroll {
     height: 100vh;
     width: 50vw;
@@ -103,25 +108,50 @@ h1 {
     text-align: left;
 }
 
- /* Style all font awesome icons */
-.fa {
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5%;
+/*###################################*/
+/* Popup container */
+.popup {
+  position: relative;
+  display: block;
+  cursor: pointer;
 }
 
-/* Add a hover effect if you want */
-.fa:hover {
-  opacity: 0.7;
+/* The actual popup (appears on top) */
+.popuptext {
+  visibility: hidden;
+  width: 80vw;
+  height: 80vh;
+  background-color: black;
+  padding: 10px;
+  color: #fff;
+  text-align: left;
+  z-index: 1;
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  overflow: scroll;
 }
 
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+/*###################################*/
 
 @media only screen and (max-width:800px) 
 {
 
-    .wrap {
+    .wrap_reverse {
         display:flex;
         flex-direction: column-reverse;
+    }
+
+
+    .wrap {
+        display:flex;
+        flex-direction: column;
     }
 
     .box_no_scroll {

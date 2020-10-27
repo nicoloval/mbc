@@ -1,3 +1,5 @@
+
+// function to sort IndexTable 
 function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
   table = document.getElementById("IndexTable");
@@ -51,5 +53,11 @@ function sortTable(n) {
       }
     }
   }
+}
+
+// When the user clicks on <div>, open the popup
+function myPopUp() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
 }
 
