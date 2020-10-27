@@ -85,7 +85,7 @@ header {
 }
 
 .box_no_scroll {
-    height: 100vh
+    height: 100vh;
     width: 50vw;
     background-color: var(--backgroundColor);
 }
