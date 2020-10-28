@@ -150,7 +150,6 @@ header {
         flex-direction: column-reverse;
     }
 
-
     .wrap {
         display:flex;
         flex-direction: column;
@@ -158,6 +157,7 @@ header {
 
     .box_no_scroll {
         width: 100%;
+        height: auto;
         background-color: var(--backgroundColor);
     }
 
